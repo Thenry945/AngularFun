@@ -5,14 +5,18 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-      <script src="controllers/placesList.js"></script>
+      <script src="contollers/placesList.js"></script>
   </head>
   <body ng-app="" ng-controller="">
-    <input id="placeInput" type="text" name="placeInput" value="">
-    <button type="button" name="placeInputButton"></button>
-    <div>
-
+    <input id="placeName" type="text" name="placeName" ng-model="placeName" placeholder="Seattle">
+    <input id="placeState"type="text" name="placeState" ng-model="placeState" placeholder="WA">
+    <button type="button" name="placeInputButton" ng-click="addLocation()">Add Location</button>
+    <div id="placesToVisit">
+      <ul>
+        <li ng-repeat="places in toVisit">
+            {{place.name}}{{place.state}}
+        </li>
+      </ul>
     </div>
   </body>
 </html>

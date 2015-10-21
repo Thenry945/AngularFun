@@ -1,13 +1,16 @@
 var app = angular.module('VisitApp',[]);
-app.controller('PlacesList',function($scope)){
+app.controller('PlacesList',function($scope) {
   $scope.visited = [];
-  $scope.toVisit = [];
-  $scope.place = '';
+  $scope.toVisit = [{name:"Seattle",state:"WA"}];
+  $scope.placeName = '';
+  $scope.placeState = '';
 
 
   $scope.addLocation = function() {
-    $scope.toVisit.push($scope.place);
-    $scope.place = '';
+    var newPlace = {name:$scope.placeName,state:$scope.placeState};
+    $scope.toVisit.push(newPlace);
+    $scope.placeName = '';
+    $scope.placeState = '';
   }
 
   $scope.removeLocation = function(index) {
@@ -20,5 +23,5 @@ app.controller('PlacesList',function($scope)){
     $scope.visited.push(placeVisited);
   }
 
-  
-}
+
+});
