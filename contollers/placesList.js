@@ -1,14 +1,14 @@
 var app = angular.module('VisitApp',[]);
 app.controller('PlacesList',function($scope) {
   $scope.visited = [];
-  $scope.toVisit = [{name:"Seattle",state:"WA"}];
+  $scope.places = ["Seattle, WA"];
   $scope.placeName = '';
   $scope.placeState = '';
 
 
   $scope.addLocation = function() {
-    var newPlace = {name:$scope.placeName,state:$scope.placeState};
-    $scope.toVisit.push(newPlace);
+    var newPlace = $scope.placeName+", "+$scope.placeState;
+    $scope.places.push(newPlace);
     $scope.placeName = '';
     $scope.placeState = '';
   }
