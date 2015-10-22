@@ -1,6 +1,6 @@
 var app = angular.module('VisitApp',[]);
 app.controller('PlacesList',function($scope) {
-  $scope.visited = [];
+  $scope.placesGone = ["Kansas City, MO"];
   $scope.places = ["Seattle, WA"];
   $scope.placeName = '';
   $scope.placeState = '';
@@ -14,13 +14,13 @@ app.controller('PlacesList',function($scope) {
   }
 
   $scope.removeLocation = function(index) {
-    $scope.toVisit.splice(index,1);
+    $scope.places.splice(index, 1);
   }
 
   $scope.visited = function(index) {
-    var placeVisited = $scope.toVisit[index];
-    $scope.toVisit.splice(index,1);
-    $scope.visited.push(placeVisited);
+    var placeVisited = $scope.places[index];
+    $scope.places.splice(index,1);
+    $scope.placesGone.push(placeVisited);
   }
 
 
