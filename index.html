@@ -2,12 +2,25 @@
 <html>
   <head>
       <title>Places to visit</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.9/ngStorage.min.js"></script>
+      <script src="http://maps.googleapis.com/maps/api/js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
       <link rel="stylesheet" href="css/visit.css">
       <script src="js/contollers/placesList.js"></script>
       <script src="js/visit.js"></script>
+      <!-- <script type="text/javascript">
+      // function initialize() {
+      //     var mapProp = {
+      //       center:new google.maps.LatLng(39.50,-98.35),
+      //       zoom:5,
+      //       mapTypeId:google.maps.MapTypeId.ROADMAP
+      //     };
+      //     var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+      //     }
+      //     google.maps.event.addDomListener(mapProp, 'load', initialize);
+       // </script> -->
   </head>
   <body id="body" ng-app="VisitApp" ng-controller="PlacesList" onload="generateBackground()">
     <div id="input">
@@ -34,6 +47,10 @@
               <button type="button" name="removeVisited" ng-click="removeVisited($index)">Remove</button>
           </li>
         </ul>
+    </div>
+
+    <div class="googleMap">
+
     </div>
   </body>
 </html>
