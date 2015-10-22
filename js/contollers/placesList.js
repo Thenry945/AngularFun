@@ -1,7 +1,7 @@
 var app = angular.module('VisitApp',[]);
 app.controller('PlacesList',function($scope) {
-  $scope.placesGone = ["Kansas City, MO"];
-  $scope.places = ["Seattle, WA"];
+  $scope.placesGone = [];
+  $scope.places = [];
   $scope.placeName = '';
   $scope.placeState = '';
 

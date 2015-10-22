@@ -1,0 +1,39 @@
+  body {
+      color: white;
+    }
+    #body {
+      background-repeat: no-repeat;
+      background-size: 100%;
+      font-family: sans-serif;
+    }
+
+    #input{
+      position: absolute;
+      left: 30%;
+    }
+    #placesToVisit {
+      position: absolute;
+      top: 15%;
+      left: 5%;
+    }
+
+    #visitedPlaces {
+      position: absolute;
+      top: 15%;
+      left: 60%;
+    }
+    button {
+      color: black;
+    }
+
+    @media(max-width: 950px) {
+      #input{
+        position: absolute;
+        left: 20%;
+      }
+    @media(max-width: 835px) {
+      #input{
+        position: absolute;
+        left: 5%;
+      }
+    }

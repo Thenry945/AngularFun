@@ -5,18 +5,12 @@
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-      <script src="contollers/placesList.js"></script>
-      <script type="text/javascript">
-        function generateBackground(){
-          var images = ['nature1.jpg','nature2.jpg','nature3.jpg','nature4.jpg'];
-          var image = images[Math.floor(Math.random() * images.length)];
-          var url = "images/"+image;
-            document.getElementById('body').style.backgroundImage = "url("+url+")"; //"url("url")"});
-        }
-      </script>
+      <link rel="stylesheet" href="css/visit.css">
+      <script src="js/contollers/placesList.js"></script>
+      <script src="js/visit.js"></script>
   </head>
   <body id="body" ng-app="VisitApp" ng-controller="PlacesList" onload="generateBackground()">
-    <div class="">
+    <div id="input">
       <h1>Where in the world would you like to visit?</h1>
       <input id="placeName" type="text" name="placeName" ng-model="placeName" placeholder="Seattle">
       <input id="placeState"type="text" name="placeState" ng-model="placeState" placeholder="WA">
@@ -26,13 +20,13 @@
       <h1>Places to Visit</h1>
       <ul>
         <li ng-repeat="place in places">
-            <p><b>{{place}}</b>
+            <p>{{place}}
             <button type="button" name="visited" ng-click="visited($index)">Visit</button>
             <button type="button" name="removeLocation" ng-click="removeLocation($index)">Remove</button></p>
         </li>
       </ul>
     </div>
-    <div id="Visited Places">
+    <div id="visitedPlaces">
       <h1>Places I Visited</h1>
         <ul>
           <li ng-repeat="place in placesGone">
