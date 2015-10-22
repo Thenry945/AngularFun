@@ -31,6 +31,7 @@
         <ul>
           <li ng-repeat="place in placesGone">
               {{place}}
+              <button type="button" name="removeVisited" ng-click="removeVisited($index)">Remove</button>
           </li>
         </ul>
     </div>

@@ -23,5 +23,7 @@ app.controller('PlacesList',function($scope) {
     $scope.placesGone.push(placeVisited);
   }
 
-
+  $scope.removeVisited = function(index) {
+    $scope.placesGone.splice(index,1);
+  }
 });
